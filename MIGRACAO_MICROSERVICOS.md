@@ -102,3 +102,23 @@ Garantir a confiabilidade na arquitetura distribuída exige testes que vão alé
 1. **Containerização:** Garantir que a arquitetura em camadas atual rode perfeitamente em Docker.
 2. **Desenho de APIs (API First):** Documentar contratos usando OpenAPI (Swagger) antes de extrair as rotinas.
 3. **API Gateway:** Adicionar um Gateway (ex: Kong ou AWS API Gateway) para centralizar a segurança e rotear os pacotes ao novo modelo segregado.
+
+---
+
+## 7. Requisitos Solicitados (Boas praticas e observailidade)
+
+- **Duas boas práticas de desenvolvimento:**
+  - `Database per Service` (evita acoplamento de dados) — seção **2.1 Banco de Dados por Serviço**.
+  - `Event-Driven / Coreografia` (com Message Broker) — seção **2.2 Comunicação Assíncrona Baseada em Eventos**.
+
+- **Modelagem de pelo menos dois microsserviços:**
+  - `Order Service` e `Payment Service` com responsabilidades, endpoints e eventos — seção **3.1** e **3.2**.
+
+- **Estratégia de observabilidade (logs, métricas e monitoramento):**
+  - Logs centralizados com Correlation ID — seção **4.1 Logs Centralizados**.
+  - Métricas (Prometheus/Grafana) e métricas RED — seção **4.2 Métricas de Aplicação e Negócio**.
+  - Rastreamento distribuído com OpenTelemetry/Jaeger — seção **4.3 Rastreamento Distribuído**.
+
+- **Dois tipos de testes para garantir qualidade e confiabilidade:**
+  - `Testes de Contrato (Contract Testing)` — detalhado em **5.1 Testes de Contrato**.
+  - `Testes de Integração de Componentes (Component Tests)` usando Testcontainers — detalhado em **5.2 Testes de Integração de Componentes**.
